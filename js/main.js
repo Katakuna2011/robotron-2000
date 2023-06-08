@@ -33,6 +33,14 @@ const pecas = {
         "velocidade": -2
     }
 }
+const robo = document.querySelector('.robo')
+const botoes = document.querySelectorAll('[botao]')
+
+botoes.forEach((elemento) => {
+    elemento.addEventListener('click', (evento) => {
+        robo.src = './img/Robotron 2000 - '+elemento.textContent+'.png'
+    })
+})
 
 controle.forEach( (elemento) => {
     elemento.addEventListener('click', (evento) => {
@@ -56,3 +64,8 @@ function atualizaEstatisticas(peca){
         elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]
     })
 }
+
+
+robo.addEventListener('click', () => {
+    robo.src = './img/Robotron 2000 - Azul.png'
+})
